@@ -1,7 +1,7 @@
 package main.java.com.mycompany.corporate.talent.hub.control.flujo.service;
 import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Desarrollador;
 import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Gerente;
-import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.DesempeñoReport;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.DesempenoReport;
 import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Empleado;
 import java.util.Map;
 import java.util.HashMap;
@@ -325,13 +325,13 @@ public class EmpleadoService {
      * vez generado, no puede alterarse, lo cual es justo lo que se espera
      * de un reporte "cerrado" de fin de mes.
      */
-    public List<DesempeñoReport> generarReportesDeMes() {
-        List<DesempeñoReport> reportes = new ArrayList<>();
+    public List<DesempenoReport> generarReportesDeMes() {
+        List<DesempenoReport> reportes = new ArrayList<>();
         for (Empleado emp : empleados) {
             String feedback = emp.getPromedioDesempeno() >= 80.0
                     ? "Desempeño sobresaliente, listo para promoción."
                     : "Desempeño dentro de lo esperado, continuar plan de desarrollo.";
-            reportes.add(new DesempeñoReport(emp.getId(), emp.getPromedioDesempeno(), feedback));
+            reportes.add(new DesempenoReport(emp.getId(), emp.getPromedioDesempeno(), feedback));
         }
         return reportes;
     }

@@ -1,4 +1,4 @@
-package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+package com.mycompany.corporate.talent.hub.control.flujo.modelo;
 
 /**
  * Una de las dos únicas ramas permitidas por Empleado (sealed permits

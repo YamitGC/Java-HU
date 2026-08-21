@@ -14,5 +14,5 @@ package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
  * Compara esto con la versión POJO tradicional en
  * DesempeñoReportLegacyPOJO.java (mismo resultado, ~40 líneas más).
  */
-public record DesempeñoReport(int idEmpleado, double promedio, String feedback) {
+public record DesempenoReport(int idEmpleado, double promedio, String feedback) {
 }

@@ -9,13 +9,13 @@ import java.util.Objects;
  * equals(), hashCode() y toString(). No se usa en el flujo de la app;
  * se deja solo como comparación directa contra el record del PASO 7.
  */
-public final class DesempeñoReportLegacyPOJO {
+public final class DesempenoReportLegacyPOJO {
 
     private final int idEmpleado;
     private final double promedio;
     private final String feedback;
 
-    public DesempeñoReportLegacyPOJO(int idEmpleado, double promedio, String feedback) {
+    public DesempenoReportLegacyPOJO(int idEmpleado, double promedio, String feedback) {
         this.idEmpleado = idEmpleado;
         this.promedio = promedio;
         this.feedback = feedback;
@@ -36,7 +36,7 @@ public final class DesempeñoReportLegacyPOJO {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof DesempeñoReportLegacyPOJO that)) return false;
+        if (!(o instanceof DesempenoReportLegacyPOJO that)) return false;
         return idEmpleado == that.idEmpleado
                 && Double.compare(promedio, that.promedio) == 0
                 && Objects.equals(feedback, that.feedback);

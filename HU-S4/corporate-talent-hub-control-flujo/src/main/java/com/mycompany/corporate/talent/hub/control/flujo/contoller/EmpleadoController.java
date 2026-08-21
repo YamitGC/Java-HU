@@ -4,7 +4,7 @@ import main.java.com.mycompany.corporate.talent.hub.control.flujo.service.Emplea
 import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Empleado;
 import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Desarrollador;
 import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Gerente;
-import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.DesempeñoReport;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.DesempenoReport;
 
 import java.util.List;
 
@@ -130,15 +130,20 @@ public class EmpleadoController {
     }
 
     public String obtenerReporteMensual() {
-        List<DesempeñoReport> reportes = service.generarReportesDeMes();
+        List<DesempenoReport> reportes = service.generarReportesDeMes();
         if (reportes.isEmpty()) {
             return "No hay reportes disponibles.";
         }
         StringBuilder sb = new StringBuilder("\nREPORTES DE FIN DE MES\n");
-        for (DesempeñoReport r : reportes) {
+        for (DesempenoReport r : reportes) {
             sb.append(String.format("ID: %d | Promedio: %.2f | Feedback: %s%n",
                     r.idEmpleado(), r.promedio(), r.feedback()));
         }
         return sb.toString();
     }
+    
+       public void registrarLogBono(int id) {
+       Empleado empleado = service.buscarPorId(id);
+       empleado.registrarLog(empleado.getNombre());
+   }
 }
