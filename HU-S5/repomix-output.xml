@@ -1,0 +1,1252 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+corporate-talent-hub-control-flujo/
+  .idea/
+    .gitignore
+    compiler.xml
+    encodings.xml
+    jarRepositories.xml
+    misc.xml
+    vcs.xml
+  src/
+    main/
+      java/
+        com/
+          mycompany/
+            corporate/
+              talent/
+                hub/
+                  control/
+                    flujo/
+                      contoller/
+                        EmpleadoController.java
+                      modelo/
+                        CatalogoCorporativo.java
+                        ConsultorExterno.java
+                        Desarrollador.java
+                        DesempenoReport.java
+                        DesempenoReportLegacyPOJO.java
+                        Empleado.java
+                        Gerente.java
+                        Persona.java
+                        Promocionable.java
+                      service/
+                        EmpleadoService.java
+                      ui/
+                        ConsoleUi.java
+                      App.java
+  pom.xml
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="corporate-talent-hub-control-flujo/.idea/.gitignore">
+# Default ignored files
+/shelf/
+/workspace.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+# Ignored default folder with query files
+/queries/
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+</file>
+
+<file path="corporate-talent-hub-control-flujo/.idea/compiler.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="corporate-talent-hub-control-flujo" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>
+</file>
+
+<file path="corporate-talent-hub-control-flujo/.idea/encodings.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
+</file>
+
+<file path="corporate-talent-hub-control-flujo/.idea/jarRepositories.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="RemoteRepositoriesConfiguration">
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Central Repository" />
+      <option name="url" value="https://repo.maven.apache.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="central" />
+      <option name="name" value="Maven Central repository" />
+      <option name="url" value="https://repo1.maven.org/maven2" />
+    </remote-repository>
+    <remote-repository>
+      <option name="id" value="jboss.community" />
+      <option name="name" value="JBoss Community repository" />
+      <option name="url" value="https://repository.jboss.org/nexus/content/repositories/public/" />
+    </remote-repository>
+  </component>
+</project>
+</file>
+
+<file path="corporate-talent-hub-control-flujo/.idea/misc.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-26" project-jdk-type="JavaSDK" />
+</project>
+</file>
+
+<file path="corporate-talent-hub-control-flujo/.idea/vcs.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
+  </component>
+</project>
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/contoller/EmpleadoController.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.contoller;
+
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.service.EmpleadoService;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Empleado;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Desarrollador;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Gerente;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.DesempenoReport;
+
+import java.util.List;
+
+public class EmpleadoController {
+    private final EmpleadoService service = new EmpleadoService();
+
+    public String registrarEmpleado(int id, String nombre, byte edad, double salario, double[] calificaciones) {
+        try {
+            service.guardarEmpleado(id, nombre, edad, salario, calificaciones);
+            return "Empleado registrado correctamente.";
+        } catch (IllegalArgumentException e) {
+            return "Error de validación: " + e.getMessage();
+        }
+    }
+
+    public String obtenerReporteDesempeno() {
+        return service.generarReporte();
+    }
+
+    public String buscarEmpleado(int id) {
+        try {
+            Empleado empleado = service.buscarPorId(id);
+            return "Empleado encontrado -> ID: " + empleado.getId()
+                    + " | Nombre: " + empleado.getNombre()
+                    + " | Salario: " + empleado.getSalario();
+        } catch (IllegalArgumentException e) {
+            return "Error: " + e.getMessage();
+        }
+    }
+
+    public String eliminarEmpleado(int id) {
+        try {
+            service.eliminarEmpleado(id);
+            return "Empleado eliminado correctamente.";
+        } catch (IllegalArgumentException e) {
+            return "Error: " + e.getMessage();
+        }
+    }
+
+    public String listarEmpleados() {
+        List<Empleado> empleados = service.listarEmpleados();
+        if (empleados.isEmpty()) {
+            return "No hay empleados registrados.";
+        }
+        StringBuilder listado = new StringBuilder("\nLISTADO DE EMPLEADOS\n");
+        for (Empleado e : empleados) {
+            listado.append(String.format("ID: %d | Nombre: %s | Salario: %.2f\n",
+                    e.getId(), e.getNombre(), e.getSalario()));
+        }
+        return listado.toString();
+    }
+
+    public String obtenerPrimerEmpleado() {
+        try {
+            Empleado empleado = service.obtenerPrimerEmpleado();
+            return "Primer empleado registrado -> ID: " + empleado.getId()
+                    + " | Nombre: " + empleado.getNombre();
+        } catch (IllegalArgumentException e) {
+            return "Error: " + e.getMessage();
+        }
+    }
+
+    public String obtenerUltimoEmpleado() {
+        try {
+            Empleado empleado = service.obtenerUltimoEmpleado();
+            return "Último empleado registrado -> ID: " + empleado.getId()
+                    + " | Nombre: " + empleado.getNombre();
+        } catch (IllegalArgumentException e) {
+            return "Error: " + e.getMessage();
+        }
+    }
+
+    public String obtenerListaInvertida() {
+        List<Empleado> invertida = service.obtenerListaInvertida();
+        if (invertida.isEmpty()) {
+            return "No hay empleados registrados.";
+        }
+        StringBuilder listado = new StringBuilder("\nLISTADO INVERTIDO (últimos primero)\n");
+        for (Empleado e : invertida) {
+            listado.append(String.format("ID: %d | Nombre: %s\n", e.getId(), e.getNombre()));
+        }
+        return listado.toString();
+    }
+
+    public String eliminarEmpleadosBajoPuntaje(double puntajeMinimo) {
+        int eliminados = service.eliminarEmpleadosBajoPuntaje(puntajeMinimo);
+        return "Empleados eliminados por bajo puntaje: " + eliminados;
+    }
+
+    public String obtenerReporteFinal() {
+        return service.generarReporteFinal();
+    }
+
+    public String registrarDesarrollador(int id, String nombre, byte edad, double salario,
+                                         double[] calificaciones, String lenguajePrincipal) {
+        try {
+            service.guardarDesarrollador(id, nombre, edad, salario, calificaciones, lenguajePrincipal);
+            return "Desarrollador registrado correctamente.";
+        } catch (IllegalArgumentException e) {
+            return "Error de validación: " + e.getMessage();
+        }
+    }
+
+    public String registrarGerente(int id, String nombre, byte edad, double salario,
+                                   double[] calificaciones, double presupuestoMensual) {
+        try {
+            service.guardarGerente(id, nombre, edad, salario, calificaciones, presupuestoMensual);
+            return "Gerente registrado correctamente.";
+        } catch (IllegalArgumentException e) {
+            return "Error de validación: " + e.getMessage();
+        }
+    }
+
+    public String validarRol(int id, boolean usarSintaxisModerna) {
+        try {
+            Empleado empleado = service.buscarPorId(id);
+            return usarSintaxisModerna
+                    ? service.validarRolModerno(empleado)
+                    : service.validarRolLegacy(empleado);
+        } catch (IllegalArgumentException e) {
+            return "Error: " + e.getMessage();
+        }
+    }
+
+    public String obtenerReporteMensual() {
+        List<DesempenoReport> reportes = service.generarReportesDeMes();
+        if (reportes.isEmpty()) {
+            return "No hay reportes disponibles.";
+        }
+        StringBuilder sb = new StringBuilder("\nREPORTES DE FIN DE MES\n");
+        for (DesempenoReport r : reportes) {
+            sb.append(String.format("ID: %d | Promedio: %.2f | Feedback: %s%n",
+                    r.idEmpleado(), r.promedio(), r.feedback()));
+        }
+        return sb.toString();
+    }
+    
+       public void registrarLogBono(int id) {
+       Empleado empleado = service.buscarPorId(id);
+       empleado.registrarLog(empleado.getNombre());
+   }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/CatalogoCorporativo.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+import java.util.List;
+import java.util.Map;
+
+/**
+ * Catálogo corporativo de datos fijos: Tecnologías y Sedes.
+ *
+ * Se usan List.of() y Map.of() (Factory Methods introducidos en Java 9 y
+ * consolidados en Java 11) en lugar de un ArrayList o HashMap tradicional.
+ *
+ * ¿Por qué son más seguras que ArrayList/HashMap?
+ * 1. INMUTABILIDAD: una vez creadas, no se pueden modificar. Cualquier intento
+ *    de usar .add(), .remove() o .put() lanza una UnsupportedOperationException
+ *    en tiempo de ejecución. Esto evita que otra parte del código modifique
+ *    "por accidente" datos que deberían ser fijos (como el catálogo de sedes).
+ * 2. THREAD-SAFETY: al no poder modificarse, son seguras para usar entre
+ *    múltiples hilos sin necesidad de sincronización, algo que un ArrayList
+ *    normal no garantiza.
+ * 3. NO ACEPTAN null: List.of() y Map.of() lanzan NullPointerException si se
+ *    intenta agregar un elemento null, evitando bugs por datos faltantes
+ *    que un ArrayList sí permitiría silenciosamente.
+ * 4. INTENCIÓN CLARA EN EL CÓDIGO: cualquiera que lea "List.of(...)" sabe
+ *    de inmediato que esos datos son constantes y no deben cambiar en
+ *    tiempo de ejecución, algo que un ArrayList no comunica por sí mismo.
+ *
+ * LIMITACIÓN A TENER EN CUENTA:
+ * Como son inmutables, NO sirven para colecciones que necesiten crecer o
+ * cambiar en tiempo de ejecución (como la lista de empleados). Para eso
+ * seguimos usando ArrayList y HashMap, como en EmpleadoService.
+ */
+public final class CatalogoCorporativo {
+
+    // Lista inmutable de tecnologías que maneja la empresa
+    public static final List<String> TECNOLOGIAS = List.of(
+            "Java",
+            "Spring Boot",
+            "React",
+            "PostgreSQL",
+            "Docker",
+            "Kubernetes"
+    );
+
+    // Mapa inmutable de sedes: código de sede -> nombre de ciudad
+    public static final Map<String, String> SEDES = Map.of(
+            "BOG", "Bogotá",
+            "MDE", "Medellín",
+            "BAQ", "Barranquilla",
+            "CLO", "Cali"
+    );
+
+    // Constructor privado: esta clase es solo un contenedor de constantes,
+    // no debe instanciarse.
+    private CatalogoCorporativo() {
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/ConsultorExterno.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+/**
+ * Segunda (y última) rama permitida por Persona. Se declara "final" porque
+ * no necesitamos que nadie extienda a su vez a ConsultorExterno: cierra
+ * por completo esta rama de la jerarquía sellada.
+ */
+public final class ConsultorExterno extends Persona {
+
+    private final String empresaContratista;
+    private final double tarifaPorHora;
+
+    public ConsultorExterno(String nombre, byte edad, String empresaContratista, double tarifaPorHora) {
+        super(nombre, edad);
+        this.empresaContratista = empresaContratista;
+        this.tarifaPorHora = tarifaPorHora;
+    }
+
+    public String getEmpresaContratista() {
+        return empresaContratista;
+    }
+
+    public double getTarifaPorHora() {
+        return tarifaPorHora;
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/Desarrollador.java">
+package com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+/**
+ * Una de las dos únicas ramas permitidas por Empleado (sealed permits
+ * Desarrollador, Gerente). Final: no necesita subclases propias.
+ */
+public final class Desarrollador extends Empleado {
+
+    private final String lenguajePrincipal;
+
+    public Desarrollador(int id, String nombre, byte edad, double salario, String lenguajePrincipal) {
+        super(id, nombre, edad, salario);
+        this.lenguajePrincipal = lenguajePrincipal;
+    }
+
+    public String getLenguajePrincipal() {
+        return lenguajePrincipal;
+    }
+
+    @Override
+    public double calcularBonoAscenso() {
+        return getSalario() * 0.08; // bono especializado para desarrolladores
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/DesempenoReport.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+/**
+ * SINTAXIS MODERNA (Java 17/21) — record:
+ * Un record es una clase inmutable de solo-datos. Con esta única línea,
+ * el compilador genera automáticamente:
+ *  - Un constructor canónico (idEmpleado, promedio, feedback).
+ *  - Getters con el nombre del campo: idEmpleado(), promedio(), feedback().
+ *  - equals(), hashCode() y toString() basados en todos los campos.
+ *  - Los campos son "final" por naturaleza -> el record es inmutable:
+ *    una vez creado un DesempeñoReport, no puede modificarse. Ideal para
+ *    un reporte de fin de mes que no debería cambiar después de emitido.
+ *
+ * Compara esto con la versión POJO tradicional en
+ * DesempeñoReportLegacyPOJO.java (mismo resultado, ~40 líneas más).
+ */
+public record DesempenoReport(int idEmpleado, double promedio, String feedback) {
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/DesempenoReportLegacyPOJO.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+import java.util.Objects;
+
+/**
+ * ESTILO LEGACY (Java 8/11) — POJO tradicional.
+ * Este archivo hace EXACTAMENTE lo mismo que el record DesempeñoReport,
+ * pero requiere escribir manualmente: campos, constructor, getters,
+ * equals(), hashCode() y toString(). No se usa en el flujo de la app;
+ * se deja solo como comparación directa contra el record del PASO 7.
+ */
+public final class DesempenoReportLegacyPOJO {
+
+    private final int idEmpleado;
+    private final double promedio;
+    private final String feedback;
+
+    public DesempenoReportLegacyPOJO(int idEmpleado, double promedio, String feedback) {
+        this.idEmpleado = idEmpleado;
+        this.promedio = promedio;
+        this.feedback = feedback;
+    }
+
+    public int getIdEmpleado() {
+        return idEmpleado;
+    }
+
+    public double getPromedio() {
+        return promedio;
+    }
+
+    public String getFeedback() {
+        return feedback;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof DesempenoReportLegacyPOJO that)) return false;
+        return idEmpleado == that.idEmpleado
+                && Double.compare(promedio, that.promedio) == 0
+                && Objects.equals(feedback, that.feedback);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idEmpleado, promedio, feedback);
+    }
+
+    @Override
+    public String toString() {
+        return "DesempeñoReportLegacyPOJO{idEmpleado=" + idEmpleado
+                + ", promedio=" + promedio + ", feedback='" + feedback + "'}";
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/Empleado.java">
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+/**
+ * @author Coder
+ *
+ * Empleado ahora extiende la sealed class Persona (TASK 1) y además es
+ * sealed a su vez: solo Desarrollador y Gerente pueden extenderla
+ * (TASK 3). Así queda una jerarquía sellada de dos niveles, totalmente
+ * controlada por el equipo dueño del dominio.
+ *
+ * También implementa Promocionable (TASK 4), heredando de forma gratuita
+ * el método default registrarLog() sin tener que escribir nada nuevo.
+ *
+ * Encapsulamiento (TASK 4): id, salario y promedioDesempeno son
+ * "private" (solo accesibles vía getters/setters); nombre y edad son
+ * "protected" y viven en Persona, visibles únicamente para las subclases
+ * de la jerarquía (Empleado, Desarrollador, Gerente, ConsultorExterno).
+ */
+public sealed class Empleado extends Persona implements Promocionable
+        permits Desarrollador, Gerente {
+
+    private final int id;
+    private final double salario;
+    private double promedioDesempeno;
+
+    public Empleado(int id, String nombre, byte edad, double salario) {
+        super(nombre, edad);
+        this.id = id;
+        this.salario = salario;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
+
+    public double getPromedioDesempeno() {
+        return promedioDesempeno;
+    }
+
+    public void setPromedioDesempeno(double promedioDesempeno) {
+        this.promedioDesempeno = promedioDesempeno;
+    }
+
+    /**
+     * Regla de bono por defecto para un empleado "genérico" (sin rol
+     * especializado). Desarrollador y Gerente la sobreescriben con su
+     * propia regla de negocio.
+     */
+    @Override
+    public double calcularBonoAscenso() {
+        return salario * 0.05; // 5% de bono estándar
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/Gerente.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+public final class Gerente extends Empleado {
+
+    private final double presupuestoMensual;
+
+    public Gerente(int id, String nombre, byte edad, double salario, double presupuestoMensual) {
+        super(id, nombre, edad, salario);
+        this.presupuestoMensual = presupuestoMensual;
+    }
+
+    public double getPresupuestoMensual() {
+        return presupuestoMensual;
+    }
+
+    @Override
+    public double calcularBonoAscenso() {
+        return getSalario() * 0.12 + presupuestoMensual * 0.01;
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/Persona.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+/**
+ * ESTILO LEGACY (Java 8/11) — herencia abierta:
+ * Antes de Java 17, una clase base como "Persona" solo podía declararse
+ * como una clase abstracta común:
+ *
+ *   public abstract class Persona {
+ *       protected String nombre;
+ *       ...
+ *   }
+ *
+ * Con esa declaración, CUALQUIER clase, en cualquier paquete —incluso una
+ * librería externa fuera de nuestro control— podía escribir:
+ *
+ *   public class ClienteExterno extends Persona { ... }
+ *
+ * y el compilador lo permitía sin restricción alguna. Esto es "herencia
+ * abierta": nada impide que aparezcan subtipos inesperados del dominio.
+ *
+ * ESTILO MODERNO (Java 17/21) — Sealed Classes:
+ * Al declarar Persona como "sealed" y usar "permits", definimos de forma
+ * cerrada y explícita cuáles son las ÚNICAS clases autorizadas a extenderla:
+ * Empleado y ConsultorExterno.
+ *
+ * ¿POR QUÉ ES MÁS SEGURO PARA EL DISEÑO DE APIs?
+ * 1. CONTROL TOTAL DEL DOMINIO: el equipo dueño de Persona conoce de
+ *    antemano TODAS las subclases posibles; nadie puede "colarse" en la
+ *    jerarquía desde otro módulo o librería externa.
+ * 2. EXHAUSTIVIDAD EN PATTERN MATCHING: como el compilador conoce el
+ *    conjunto cerrado y finito de subtipos, un switch sobre una Persona
+ *    puede verificarse EXHAUSTIVAMENTE en tiempo de compilación, sin
+ *    necesitar una rama "default" que oculte casos no contemplados.
+ * 3. MODELADO FIEL AL NEGOCIO: en este dominio una "Persona" del sistema
+ *    solo puede ser Empleado o ConsultorExterno. La sealed class convierte
+ *    esa regla de negocio en una garantía del lenguaje, no solo en una
+ *    convención documentada que alguien podría ignorar.
+ * 4. EVOLUCIÓN CONTROLADA: si en el futuro se necesita un nuevo tipo de
+ *    Persona, el compilador OBLIGA a actualizar "permits" y a revisar
+ *    cualquier switch exhaustivo existente, evitando romper invariantes
+ *    de forma silenciosa.
+ *
+ * En resumen: la herencia abierta prioriza flexibilidad sin restricción;
+ * las sealed classes priorizan seguridad y previsibilidad, algo valioso
+ * en un dominio corporativo sensible como el de talento humano.
+ */
+public abstract sealed class Persona permits Empleado, ConsultorExterno {
+
+    protected final String nombre;
+    protected final byte edad;
+
+    protected Persona(String nombre, byte edad) {
+        this.nombre = nombre;
+        this.edad = edad;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public byte getEdad() {
+        return edad;
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/modelo/Promocionable.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo;
+
+/**
+ * Contrato de comportamiento para cualquier Persona ascendible dentro
+ * del sistema (en este dominio, solo Empleado y sus subtipos).
+ */
+public interface Promocionable {
+
+    /** Método abstracto: cada implementación define su propia regla de bono. */
+    double calcularBonoAscenso();
+
+    /**
+     * EVOLUCIÓN DE INTERFACES (Java 8+) — métodos default:
+     * Antes de Java 8, agregar un método nuevo a una interfaz existente
+     * era un "breaking change": TODAS las clases que ya la implementaban
+     * dejaban de compilar hasta implementar el método nuevo. Esto hacía
+     * casi imposible evolucionar interfaces públicas ya usadas por
+     * terceros (como pasó con las interfaces del propio JDK, ej. List,
+     * antes de Java 8).
+     *
+     * Con "default" podemos añadir este método de logging a Promocionable
+     * DESPUÉS de que ya existan clases implementándola, y ninguna de esas
+     * clases se rompe ni está obligada a sobreescribirlo: hereda esta
+     * implementación automáticamente.
+     */
+    default void registrarLog(String nombrePersona) {
+        System.out.printf("[LOG] Bono de ascenso calculado para %s -> $%.2f%n",
+                nombrePersona, calcularBonoAscenso());
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/service/EmpleadoService.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo.service;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Desarrollador;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Gerente;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.DesempenoReport;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Empleado;
+import java.util.Map;
+import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
+
+public class EmpleadoService {
+    private final List<Empleado> empleados = new ArrayList<>();
+    private final Map<Integer, Empleado> empleadosPorId = new HashMap<>();
+    private static final int MAXIMO_EMPLEADOS = 50;
+
+    public void guardarEmpleado(int id, String nombre, byte edad, double salario, double[] calificaciones) {
+        if (empleados.size() >= MAXIMO_EMPLEADOS) {
+            throw new IllegalArgumentException("No hay espacio para más empleados.");
+        }
+        if (id <= 0) {
+            throw new IllegalArgumentException("El ID debe ser mayor que cero.");
+        }
+        if (existeId(id)) {
+            throw new IllegalArgumentException("Ya existe un empleado con ese ID.");
+        }
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        if (edad < 18 || edad > 100) {
+            throw new IllegalArgumentException("La edad está fuera del rango permitido (18-100).");
+        }
+        if (salario <= 0) {
+            throw new IllegalArgumentException("El salario debe ser mayor que cero.");
+        }
+
+        double suma = 0;
+        for (double calificacion : calificaciones) {
+            if (calificacion < 0.0 || calificacion > 100.0) {
+                throw new IllegalArgumentException("La calificación debe estar entre 0 y 100.");
+            }
+            suma += calificacion;
+        }
+
+        double promedio = suma / calificaciones.length;
+
+        Empleado nuevoEmpleado = new Empleado(id, nombre, edad, salario);
+        nuevoEmpleado.setPromedioDesempeno(promedio); 
+        empleados.add(nuevoEmpleado);
+        empleadosPorId.put(id, nuevoEmpleado);
+    }
+
+    public Empleado buscarPorId(int id) {
+        Empleado empleado = empleadosPorId.get(id);
+        if (empleado == null) {
+            throw new IllegalArgumentException("No existe un empleado con ID: "+ id);
+        }
+        return empleado;
+    }
+
+    public String generarReporte() {
+        if (empleados.isEmpty()) {
+            return "Todavía no hay empleados registrados.";
+        }
+
+        StringBuilder reporte = new StringBuilder("\nREPORTE DE DESEMPEÑO\n");
+        for (Empleado emp : empleados) {
+            double promedio = emp.getPromedioDesempeno();
+            int promedioSimplificado = (int) promedio;
+            
+            // Determina el estado del empleado según la nota
+            String estado = (promedio >= 80.0) ? "PROMOVIDO" : "REGULAR";
+            
+            // Determina la categoría del empleado según los rangos de salario entregados
+            String categoria;
+            double salario = emp.getSalario();
+            if (salario < 2000000) {
+                categoria = "JUNIOR";
+            } else if (salario < 4000000) {
+                categoria = "SEMISENIOR";
+            } else if (salario < 7000000) {
+                categoria = "SENIOR";
+            } else {
+                categoria = "LÍDER";
+            }
+
+            // Agrega la línea formateada al reporte final
+            reporte.append(String.format("ID: %d | Nombre: %s | Promedio: %.2f | Simplificado: %d | Estado: %s | Categoría: %s\n", 
+                    emp.getId(), emp.getNombre(), promedio, promedioSimplificado, estado, categoria));
+        }
+        return reporte.toString();
+    }
+
+    public List<Empleado> listarEmpleados() {
+        return new ArrayList<>(empleados); // copia defensiva
+    }
+
+    public void eliminarEmpleado(int id) {
+        Empleado empleado = empleadosPorId.get(id);
+        if (empleado == null) {
+            throw new IllegalArgumentException("No existe un empleado con ID: " + id);
+        }
+        empleadosPorId.remove(id);
+        empleados.remove(empleado);
+    }
+
+    private boolean existeId(int id) {
+        return empleadosPorId.containsKey(id);
+    }
+
+    /**
+     * SINTAXIS LEGACY (Java 8/11):
+     * Para obtener el primer y último elemento de una lista, había que
+     * calcular manualmente los índices. Esto es propenso a errores, ya que
+     * si la lista está vacía, lista.get(0) o lista.size() - 1 lanzan
+     * IndexOutOfBoundsException, y hay que acordarse siempre de restar 1
+     * para el último elemento.
+     */
+    public Empleado obtenerPrimerEmpleadoLegacy() {
+        if (empleados.isEmpty()) {
+            throw new IllegalArgumentException("No hay empleados registrados.");
+        }
+        return empleados.get(0);
+    }
+
+    public Empleado obtenerUltimoEmpleadoLegacy() {
+        if (empleados.isEmpty()) {
+            throw new IllegalArgumentException("No hay empleados registrados.");
+        }
+        return empleados.get(empleados.size() - 1);
+    }
+
+    /**
+     * SINTAXIS MODERNA (Java 21 - Sequenced Collections):
+     * A partir de Java 21, List (y otras colecciones ordenadas) implementan
+     * la interfaz SequencedCollection, que añade getFirst(), getLast() y
+     * reversed().
+     *
+     * Ventajas frente a la sintaxis Legacy:
+     * 1. LEGIBILIDAD: getFirst()/getLast() expresan la intención directamente,
+     *    en vez de obligar a leer una operación aritmética (size() - 1) para
+     *    entender qué se está pidiendo.
+     * 2. PREVENCIÓN DE ERRORES DE ÍNDICE: se elimina el riesgo de un
+     *    "off-by-one" (ej. olvidar el -1) que antes era un error común y
+     *    solo se detectaba en tiempo de ejecución.
+     * 3. reversed() evita implementar manualmente un algoritmo de
+     *    ordenamiento inverso (recorrer con un for en reversa o usar
+     *    Collections.reverse(), que además modifica la lista original).
+     *    reversed() devuelve una vista invertida sin alterar la lista base.
+     * 4. CONSISTENCIA: el mismo patrón (getFirst/getLast/reversed) funciona
+     *    igual en List, Deque y LinkedHashSet, entre otras.
+     */
+    public Empleado obtenerPrimerEmpleado() {
+        if (empleados.isEmpty()) {
+            throw new IllegalArgumentException("No hay empleados registrados.");
+        }
+        return empleados.getFirst();
+    }
+
+    public Empleado obtenerUltimoEmpleado() {
+        if (empleados.isEmpty()) {
+            throw new IllegalArgumentException("No hay empleados registrados.");
+        }
+        return empleados.getLast();
+    }
+
+    public List<Empleado> obtenerListaInvertida() {
+        return empleados.reversed();
+    }
+
+    /**
+     * FILTRADO AVANZADO con removeIf():
+     * En vez de recorrer la lista manualmente con un Iterator para eliminar
+     * elementos (como se hacía en Java 8 para evitar ConcurrentModificationException),
+     * removeIf() aplica un Predicate y elimina en una sola línea, de forma segura.
+     *
+     * @return la cantidad de empleados eliminados
+     */
+    public int eliminarEmpleadosBajoPuntaje(double puntajeMinimo) {
+        int tamanoAntes = empleados.size();
+
+        empleados.removeIf(emp -> emp.getPromedioDesempeno() < puntajeMinimo);
+
+        // Sincronizamos el HashMap, ya que removeIf solo afecta al ArrayList
+        empleadosPorId.values().removeIf(emp -> emp.getPromedioDesempeno() < puntajeMinimo);
+
+        return tamanoAntes - empleados.size();
+    }
+
+    /**
+     * INFERENCIA DE TIPOS CON var (Java 11+):
+     *
+     * Java 8 (declaración explícita):
+     *   double sumaSalarios = 0;
+     *   for (Empleado emp : empleados) {
+     *       double salario = emp.getSalario();
+     *       sumaSalarios += salario;
+     *   }
+     *
+     * Java 11+ (con var):
+     *   var sumaSalarios = 0.0;
+     *   for (var emp : empleados) {
+     *       var salario = emp.getSalario();
+     *       sumaSalarios += salario;
+     *   }
+     *
+     * var no hace la variable "de tipo dinámico" (Java sigue siendo fuertemente
+     * tipado y el chequeo ocurre en compilación); simplemente le pide al
+     * compilador que infiera el tipo a partir del valor asignado. Esto reduce
+     * la repetición visual (ej. "Empleado emp" en el for ya es obvio por el
+     * contexto de "empleados"), aunque solo conviene usarlo cuando el tipo
+     * sigue siendo claro por el contexto, para no perder legibilidad.
+     */
+    public String generarReporteFinal() {
+        if (empleados.isEmpty()) {
+            return "No hay empleados registrados para generar el reporte final.";
+        }
+
+        var totalEmpleados = empleados.size();
+        var sumaSalarios = 0.0;
+
+        for (var emp : empleados) {
+            sumaSalarios += emp.getSalario();
+        }
+
+        var promedioSalarios = sumaSalarios / totalEmpleados;
+
+        return String.format("""
+            REPORTE FINAL
+            Total de empleados: %d
+            Promedio de salarios: %.2f
+            """, totalEmpleados, promedioSalarios);
+    }
+
+    public void guardarDesarrollador(int id, String nombre, byte edad, double salario,
+                                     double[] calificaciones, String lenguajePrincipal) {
+        validarDatosBasicos(id, nombre, edad, salario, calificaciones);
+        Desarrollador dev = new Desarrollador(id, nombre, edad, salario, lenguajePrincipal);
+        dev.setPromedioDesempeno(calcularPromedio(calificaciones));
+        empleados.add(dev);
+        empleadosPorId.put(id, dev);
+    }
+
+    public void guardarGerente(int id, String nombre, byte edad, double salario,
+                               double[] calificaciones, double presupuestoMensual) {
+        validarDatosBasicos(id, nombre, edad, salario, calificaciones);
+        Gerente ger = new Gerente(id, nombre, edad, salario, presupuestoMensual);
+        ger.setPromedioDesempeno(calcularPromedio(calificaciones));
+        empleados.add(ger);
+        empleadosPorId.put(id, ger);
+    }
+
+    // Refactor interno: se extraen las validaciones que ya existían en
+// guardarEmpleado() para poder reutilizarlas en los métodos de arriba.
+    private void validarDatosBasicos(int id, String nombre, byte edad, double salario, double[] calificaciones) {
+        if (empleados.size() >= MAXIMO_EMPLEADOS) {
+            throw new IllegalArgumentException("No hay espacio para más empleados.");
+        }
+        if (id <= 0) {
+            throw new IllegalArgumentException("El ID debe ser mayor que cero.");
+        }
+        if (existeId(id)) {
+            throw new IllegalArgumentException("Ya existe un empleado con ese ID.");
+        }
+        if (nombre == null || nombre.isBlank()) {
+            throw new IllegalArgumentException("El nombre no puede estar vacío.");
+        }
+        if (edad < 18 || edad > 100) {
+            throw new IllegalArgumentException("La edad está fuera del rango permitido (18-100).");
+        }
+        if (salario <= 0) {
+            throw new IllegalArgumentException("El salario debe ser mayor que cero.");
+        }
+        for (double calificacion : calificaciones) {
+            if (calificacion < 0.0 || calificacion > 100.0) {
+                throw new IllegalArgumentException("La calificación debe estar entre 0 y 100.");
+            }
+        }
+    }
+
+    private double calcularPromedio(double[] calificaciones) {
+        double suma = 0;
+        for (double c : calificaciones) {
+            suma += c;
+        }
+        return suma / calificaciones.length;
+    }
+
+    /**
+     * SINTAXIS LEGACY (Java 8/11): instanceof + casting manual obligatorio.
+     * Hay que preguntar el tipo y, si coincide, hacer un cast explícito
+     * antes de poder usar los métodos propios de la subclase. Es repetitivo
+     * y, si alguien cambia el orden o se olvida el cast, el error solo
+     * aparece en tiempo de ejecución (ClassCastException).
+     */
+    public String validarRolLegacy(Empleado empleado) {
+        if (empleado instanceof Desarrollador) {
+            Desarrollador dev = (Desarrollador) empleado; // casting manual obligatorio
+            return "Desarrollador: lenguaje principal = " + dev.getLenguajePrincipal();
+        } else if (empleado instanceof Gerente) {
+            Gerente ger = (Gerente) empleado; // casting manual obligatorio
+            return "Gerente: presupuesto mensual = " + ger.getPresupuestoMensual();
+        }
+        return "Rol sin especialización registrada.";
+    }
+
+    /**
+     * SINTAXIS MODERNA (Java 17/21) — Pattern Matching for instanceof:
+     * El propio "if" declara y castea la variable ("des", "ger") solo si la
+     * comprobación es verdadera. Se elimina el cast manual, se reduce el
+     * código y el compilador garantiza que "des"/"ger" ya tienen el tipo
+     * correcto dentro del bloque.
+     */
+    public String validarRolModerno(Empleado empleado) {
+        if (empleado instanceof Desarrollador des) {
+            return "Desarrollador: lenguaje principal = " + des.getLenguajePrincipal();
+        } else if (empleado instanceof Gerente ger) {
+            return "Gerente: presupuesto mensual = " + ger.getPresupuestoMensual();
+        }
+        return "Rol sin especialización registrada.";
+    }
+
+    /**
+     * Emite un reporte de fin de mes por cada empleado usando el record
+     * DesempeñoReport (TASK 2). Cada elemento de la lista es inmutable: una
+     * vez generado, no puede alterarse, lo cual es justo lo que se espera
+     * de un reporte "cerrado" de fin de mes.
+     */
+    public List<DesempenoReport> generarReportesDeMes() {
+        List<DesempenoReport> reportes = new ArrayList<>();
+        for (Empleado emp : empleados) {
+            String feedback = emp.getPromedioDesempeno() >= 80.0
+                    ? "Desempeño sobresaliente, listo para promoción."
+                    : "Desempeño dentro de lo esperado, continuar plan de desarrollo.";
+            reportes.add(new DesempenoReport(emp.getId(), emp.getPromedioDesempeno(), feedback));
+        }
+        return reportes;
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/ui/ConsoleUi.java">
+package com.mycompany.corporate.talent.hub.control.flujo.ui;
+
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.contoller.EmpleadoController;
+import main.java.com.mycompany.corporate.talent.hub.control.flujo.modelo.Empleado;
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class ConsoleUi {
+    private final EmpleadoController controller = new EmpleadoController();
+
+    public void iniciar() {
+        try (var scanner = new Scanner(System.in)) {
+            var sistemaActivo = true;
+
+            do {
+                mostrarMenu();
+                try {
+                    System.out.print("Seleccione una opción: ");
+                    var opcion = scanner.nextInt();
+                    scanner.nextLine(); 
+
+                    switch (opcion) {
+                        case 1:
+                            registrarEmpleadoFormulario(scanner);
+                            break;
+                        case 2:
+                            System.out.println(controller.obtenerReporteDesempeno());
+                            break;
+                        case 3:
+                            mostrarCategoriasSalariales();
+                            break;
+                        case 4:
+                            buscarEmpleadoFormulario(scanner);
+                            break;
+                        case 5:
+                            eliminarEmpleadoFormulario(scanner);
+                            break;
+                        case 6:
+                            System.out.println(controller.listarEmpleados());
+                            break;
+                        case 7:
+                            System.out.println(controller.obtenerPrimerEmpleado());
+                            break;
+                        case 8:
+                            System.out.println(controller.obtenerUltimoEmpleado());
+                            break;
+                        case 9:
+                            System.out.println(controller.obtenerListaInvertida());
+                            break;
+                        case 10:
+                            System.out.print("Ingrese el puntaje mínimo requerido: ");
+                            var puntajeMinimo = scanner.nextDouble();
+                            scanner.nextLine();
+                            System.out.println(controller.eliminarEmpleadosBajoPuntaje(puntajeMinimo));
+                            break;
+                        case 11:
+                            System.out.println(controller.obtenerReporteFinal());
+                            break;
+                        case 12:
+                            System.out.println(controller.obtenerReporteMensual());
+                            break;
+                        case 13:
+                            System.out.print("Ingrese el ID del empleado a validar: ");
+                            var idValidar = scanner.nextInt();
+                            scanner.nextLine();
+                            System.out.println(controller.validarRol(idValidar, true)); // true = sintaxis moderna
+                            break;
+                        case 0:
+                            sistemaActivo = false;
+                            System.out.println("Sesión finalizada.");
+                            break;
+                        default:
+                            System.out.println("Opción fuera del menú.");
+                            break;
+                    }
+                } catch (InputMismatchException excepcion) {
+                    System.out.println("Entrada inválida. Debe escribir un valor numérico.");
+                    scanner.nextLine();
+                }
+            } while (sistemaActivo);
+        }
+    }
+
+    private void mostrarMenu() {
+        System.out.println("""
+                =====================================
+                     CORPORATE TALENT HUB
+                =====================================
+                1. Registrar empleado y calificaciones
+                2. Mostrar reporte de desempeño
+                3. Consultar categorías salariales
+                4. Buscar empleado por ID
+                5. Eliminar empleado por ID
+                6. Listar todos los empleados
+                7. Ver primer empleado registrado
+                8. Ver último empleado registrado
+                9. Ver listado en orden inverso
+                10. Eliminar empleados bajo puntaje mínimo
+                11. Ver reporte final (total y promedio salarial)
+                12. Ver reportes de fin de mes (records)
+                13. Validar rol de un empleado (pattern matching)
+                0. Salir
+                """);
+    }
+
+    private void registrarEmpleadoFormulario(Scanner scanner) {
+        try {
+            System.out.print("ID positivo: ");
+            var id = scanner.nextInt();
+            scanner.nextLine();
+
+            System.out.print("Nombre: ");
+            var nombre = scanner.nextLine().trim();
+
+            System.out.print("Edad entre 18 y 100: ");
+            var edad = scanner.nextByte();
+
+            System.out.print("Salario mayor que cero: ");
+            var salario = scanner.nextDouble();
+
+            double[] calificaciones = new double[3];
+            for (var i = 0; i < 3; i++) {
+                System.out.printf("Calificación del trimestre %d (0 a 100): ", i + 1);
+                calificaciones[i] = scanner.nextDouble();
+            }
+            scanner.nextLine();
+
+            String respuesta = controller.registrarEmpleado(id, nombre, edad, salario, calificaciones);
+            System.out.println(respuesta);
+
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Tipo de dato inválido en el formulario.");
+            scanner.nextLine();
+        }
+    }
+
+    private void buscarEmpleadoFormulario(Scanner scanner) {
+        try {
+            System.out.print("Ingrese el ID del empleado a buscar: ");
+            var id = scanner.nextInt();
+            scanner.nextLine();
+
+            String respuesta = controller.buscarEmpleado(id);
+            System.out.println(respuesta);
+
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Debe ingresar un ID numérico.");
+            scanner.nextLine();
+        }
+    }
+
+    private void eliminarEmpleadoFormulario(Scanner scanner) {
+        try {
+            System.out.print("Ingrese el ID del empleado a eliminar: ");
+            var id = scanner.nextInt();
+            scanner.nextLine();
+
+            String respuesta = controller.eliminarEmpleado(id);
+            System.out.println(respuesta);
+
+        } catch (InputMismatchException e) {
+            System.out.println("Error: Debe ingresar un ID numérico.");
+            scanner.nextLine();
+        }
+    }
+
+    private static void mostrarCategoriasSalariales() {
+        System.out.println("""
+                Categorías:
+                - Menos de $2.000.000: JUNIOR
+                - Desde $2.000.000 y menos de $4.000.000: SEMISENIOR
+                - Desde $4.000.000 y menos de $7.000.000: SENIOR
+                - Desde $7.000.000: LÍDER
+                """);
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/src/main/java/com/mycompany/corporate/talent/hub/control/flujo/App.java">
+package main.java.com.mycompany.corporate.talent.hub.control.flujo;
+
+import com.mycompany.corporate.talent.hub.control.flujo.ui.ConsoleUi;
+
+public class App {
+    public static void main(String[] args) {
+        ConsoleUi interfaz = new ConsoleUi();
+        interfaz.iniciar();
+    }
+}
+</file>
+
+<file path="corporate-talent-hub-control-flujo/pom.xml">
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mycompany</groupId>
+    <artifactId>corporate-talent-hub-control-flujo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>21</maven.compiler.release>
+        <exec.mainClass>com.mycompany.corporate.talent.hub.control.flujo.CorporateTalentHubControlFlujo</exec.mainClass>
+    </properties>
+</project>
+</file>
+
+</files>
